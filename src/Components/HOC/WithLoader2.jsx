@@ -9,15 +9,24 @@ const WithLoader2 = (WrappedComponent) => {
         setLoading(false);
       }, 2000);
 
-
+      return () => clearTimeout(timer); // Clean up the timer on unmount
     }, []);
 
-  return (
-    <div>
-      {loading ? <p>Loading.........</p> : <WrappedComponent {...props} />}
-    </div>
-  )
-}
-}
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        {loading ? (
+          <div className="text-center">
+            <p className="text-xl font-semibold text-gray-700 animate-pulse">Loading...</p>
+          </div>
+        ) : (
+          <div className="w-full">
+            <WrappedComponent {...props} />
+          </div>
+        )}
+      </div>
+    );
+  };
+};
 
-export default WithLoader2
+export default WithLoader2;
+

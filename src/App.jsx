@@ -8,7 +8,7 @@ import User2 from './Components/User2';
 import WithLoader2 from './Components/HOC/WithLoader2';
 import Login from './Components/HOC/login'; // Ensure 'Login' is correctly capitalized
 import WithAuth from './Components/HOC/WithAuth';
-
+import FirstForm from './Components/React_Hook_Form/FirstForm'
 
 const UserWithLoader = WithLoader(User);
 const UserWithLoader2 = WithLoader2(User2);
@@ -24,6 +24,7 @@ const App = () => {
           <Route path="/login" element={<Login />} /> {/* Fix typo here */}
           <Route path="/User2" element={<UserWithLoader2 />} />
           <Route path="/clickcounter" element={<ClickCounterPage />} />
+          <Route path="/firstform" element={<FirstForm />} />
           {/* Remove the unused route for WithAuth if not needed */}
         </Routes>
       </div>

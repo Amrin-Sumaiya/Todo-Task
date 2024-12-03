@@ -20,6 +20,11 @@ const Login = () => {
     }
   };
 
+
+  const handleNextClick = () => {
+    navigate('/firstform');
+  }
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-300">
       <div className="bg-white shadow-lg rounded-lg p-6 w-80 text-center">
@@ -40,12 +45,20 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             className="px-4 py-2 mb-2 w-full border border-gray-500 rounded-lg"
           />
-          <button
-            type="submit"
-            className="px-6 py-2 bg-black text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300 w-full"
-          >
-            Login
-          </button>
+<div className="space-y-3">
+  <button
+    type="submit"
+    className="px-6 py-3 w-full bg-black text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2  transition duration-300"
+  >
+    Login
+  </button>
+  <button
+    type="button" onClick={handleNextClick} // Changed to type="button" for Next, as it’s not a form submission
+    className="px-6 py-3 w-full text-blue-600 font-semibold border border-blue-600 rounded-lg shadow-md hover:bg-blue-50 focus:outline-none focus:ring-2  transition duration-300"
+  >
+    Next
+  </button>
+</div>
         </form>
       </div>
     </div>
